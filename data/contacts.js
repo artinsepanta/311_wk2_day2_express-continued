@@ -1,3 +1,18 @@
+const express = require('express')
+const router = express.Router()
+
+//Get all things
+router.get("/contacts"),(req,res)=>res.json('contacts');
+
+//gets one thing
+router.get("/contacts/:id",(req,res)=>{
+  const find= contacts.some(contact=>contact.id===parseInt(req.params.id));
+  if(find){
+  res.json(contacts.filter(contact=>contact.id===parseInt(req.params.id)));
+  }else{
+    res.statusMessage(400).json({msg:' Not find'})
+  }
+});
 module.exports =[
   {
     "_id": 1,

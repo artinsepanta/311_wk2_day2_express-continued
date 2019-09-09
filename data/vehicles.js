@@ -1,3 +1,19 @@
+const express = require('express');
+const router = express.Router();
+
+//Get all things
+router.get("/vehicles"),(req,res)=>res.json('vehicles');
+
+//gets one thing
+router.get("/vehicles/:id",(req,res)=>{
+  const found= vehicles.some(vehicle=>vehicle.id===parseInt(req.params.id));
+  if(found){
+  res.json(vehicles.filter(vehicle=>vehicle.id===parseIn(req.params.id)));
+  }
+  else{
+    res.statusMessage(400).json({msg:' Not find'})
+  }
+});
 module.exports = [{
     "_id": 1,
     "imgUrl": "./featured-img-1.jpg",

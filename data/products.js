@@ -1,3 +1,18 @@
+const express = require('express');
+const router = express.Router();
+
+//Get all things
+router.get("/products"),(req,res)=>res.json('products');
+
+//gets one thing
+router.get("/products/:id",(req,res)=>{
+  const search= products.some(product=>product.id===parseInt(req.params.id));
+  if(search){
+  res.json(products.filter(product=>product.id===parse(req.params.id)));
+}else{
+  res.statusMessage(400).json({msg:' Not find'})
+}
+});
 module.exports = [{
     "_id": 1,
     "name": "Body Luxuries Sweet Lavender Hand Sanitizer",
