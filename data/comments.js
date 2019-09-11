@@ -8,7 +8,7 @@ router.get("/comments"),(req,res)=>res.json('comments');
 router.get("/comments/:id",(req,res)=>{
   const look= comments.some(comment=>comment.id===parseInt(req.params.id));
   if(look){
-  res.json(comments.filter(comment => comment.id===parseIt(req.params.id)));
+  res.json(comments.filter(comment => comment.id===parseInt(req.params.id)));
   }else{
     res.statusMessage(400).json({msg:' Not find'})
   }
